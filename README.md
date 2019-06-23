@@ -6,10 +6,9 @@ single-end SAM files
 
 [Picard](https://github.com/broadinstitute/picard) has a tool called
 MarkDuplicates for marking duplicates in SAM files, but it [can only
-mark optical duplicates for paired-end reads](https://gatkforums.broad
-institute.org/gatk/discussion/comment/30092/#Comment_30092). This 
-script is written in Python and is a very fast program for doing the 
-same for single-end reads.
+mark optical duplicates for paired-end reads][1]. This script is 
+written in Python and is a very fast program for doing the same for 
+single-end reads.
 
 # Usage
 
@@ -57,9 +56,8 @@ your project.
  * Each group of reads (reads with the same mapping position) is small
    enough to fit into memory. (This vastly speeds up the program.)
  * In the output, if `n` reads are detected to be duplicates, only the
-   `n-1` lower [sequence quality](http://www.drive5.com/usearch/manual/
-   quality_score.html) reads will be marked as duplicates. 
-   The best read will remain unmarked.
+   `n-1` lower [sequence quality][2] reads will be marked as 
+   duplicates. The best read will remain unmarked.
  * In the output, if a gene is detected to be a duplicate, the 
    corresponding duplicate flag should be set.
  * The reads in the output file may be resorted.
@@ -78,3 +76,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+[1]: https://gatkforums.broadinstitute.org/gatk/discussion/comment/30092/#Comment_30092
+[2]: http://www.drive5.com/usearch/manual/quality_score.html
